@@ -1,0 +1,38 @@
+$NAME$.begin(), $NAME$.end()
+emplace_back($A$);$END$
+
+#include <atcoder/modint>
+using namespace atcoder;
+using ModInt = modint1000000007;
+std::istream &operator>>(std::istream& is, modint1000000007 &m){
+    int a; is >> a; m = a;
+    return is;
+}
+std::ostream &operator<<(std::ostream& os, const modint1000000007 &m){
+    os << m.val();
+    return os;
+}
+
+#include <atcoder/modint>
+
+using namespace atcoder;
+using ModInt = modint998244353;
+
+std::istream &operator>>(std::istream &is, modint998244353 &m) {
+    int a;
+    is >> a;
+    m = a;
+    return is;
+}
+
+std::ostream &operator<<(std::ostream &os, const modint998244353 &m) {
+    os << m.val();
+    return os;
+}
+
+#pragma GCC target("avx2")
+#pragma GCC optimize("O3")
+#pragma GCC optimize("unroll-loops")
+
+std::sort($a$.begin(), $a$.end());$END$
+std::sort($v$.begin(), $v$.end(), greater<>());$END$
