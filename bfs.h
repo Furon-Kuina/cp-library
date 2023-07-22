@@ -1,3 +1,5 @@
+
+
 std::vector<long long> Bfs(const Graph &g, const int &s) {
     int n = (int) g.size();
     std::vector<long long> dist(n, kInf);
