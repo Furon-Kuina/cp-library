@@ -46,8 +46,8 @@ data:
       path: convolution.h
       title: convolution.h
     - icon: ':warning:'
-      path: cumulative-sum.hpp
-      title: cumulative-sum.hpp
+      path: cumulative-sum-2d.hpp
+      title: cumulative-sum-2d.hpp
     - icon: ':warning:'
       path: cutils.h
       title: cutils.h
