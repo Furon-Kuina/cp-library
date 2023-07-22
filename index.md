@@ -132,6 +132,11 @@ data:
     - icon: ':warning:'
       path: vutils.h
       title: vutils.h
+  - name: verify
+    pages:
+    - icon: ':warning:'
+      path: verify/abc311_e.cpp
+      title: verify/abc311_e.cpp
   verificationCategories:
   - name: .
     pages:
