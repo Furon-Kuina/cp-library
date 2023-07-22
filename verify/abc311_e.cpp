@@ -3,7 +3,7 @@
 #include <cmath>
 #include <iostream>
 
-#include "../cumulative-sum.hpp"
+#include "../cumulative-sum-2d.hpp"
 
 using namespace std;
 
