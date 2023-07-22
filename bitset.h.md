@@ -8,27 +8,24 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"bitset.h\"\nnamespace binary_set {\n    inline long long\
-    \ SingleBit(const long long x) {\n        return 1LL << x;\n    }\n\n    inline\
-    \ long long PopCount(const long long x) {\n        return __builtin_popcount(x);\n\
-    \    }\n\n    template<typename T>\n    inline bool Contains(const long long S,\
-    \ const T i) {\n        return (S & (1LL << i)) != 0;\n    }\n\n    inline long\
-    \ long MostSignificantBit(const long long x) {\n        for (int i = 63; i >=\
-    \ 0; --i) {\n            if (x & (1LL << i))\n                return i;\n    \
-    \    }\n        return -1;\n    }\n}\nusing namespace binary_set;\n"
-  code: "namespace binary_set {\n    inline long long SingleBit(const long long x)\
-    \ {\n        return 1LL << x;\n    }\n\n    inline long long PopCount(const long\
-    \ long x) {\n        return __builtin_popcount(x);\n    }\n\n    template<typename\
-    \ T>\n    inline bool Contains(const long long S, const T i) {\n        return\
-    \ (S & (1LL << i)) != 0;\n    }\n\n    inline long long MostSignificantBit(const\
-    \ long long x) {\n        for (int i = 63; i >= 0; --i) {\n            if (x &\
-    \ (1LL << i))\n                return i;\n        }\n        return -1;\n    }\n\
-    }\nusing namespace binary_set;"
+  bundledCode: "#line 1 \"bitset.h\"\nnamespace binary_set {\ninline long long Singleton(const\
+    \ long long x) { return 1LL << x; }\n\ninline long long PopCount(const long long\
+    \ x) { return __builtin_popcount(x); }\n\ntemplate <typename T>\ninline bool Contains(const\
+    \ long long S, const T i) {\n  return (S & (1LL << i)) != 0;\n}\n\ninline long\
+    \ long MostSignificantBit(const long long x) {\n  for (int i = 63; i >= 0; --i)\
+    \ {\n    if (x & (1LL << i)) return i;\n  }\n  return -1;\n}\n}  // namespace\
+    \ binary_set\nusing namespace binary_set;\n"
+  code: "namespace binary_set {\ninline long long Singleton(const long long x) { return\
+    \ 1LL << x; }\n\ninline long long PopCount(const long long x) { return __builtin_popcount(x);\
+    \ }\n\ntemplate <typename T>\ninline bool Contains(const long long S, const T\
+    \ i) {\n  return (S & (1LL << i)) != 0;\n}\n\ninline long long MostSignificantBit(const\
+    \ long long x) {\n  for (int i = 63; i >= 0; --i) {\n    if (x & (1LL << i)) return\
+    \ i;\n  }\n  return -1;\n}\n}  // namespace binary_set\nusing namespace binary_set;"
   dependsOn: []
   isVerificationFile: false
   path: bitset.h
   requiredBy: []
-  timestamp: '2023-03-23 16:34:58+09:00'
+  timestamp: '2023-07-23 00:00:15+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: bitset.h

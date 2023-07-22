@@ -46,6 +46,15 @@ data:
       path: convolution.h
       title: convolution.h
     - icon: ':warning:'
+      path: cumulative-sum.hpp
+      title: cumulative-sum.hpp
+    - icon: ':warning:'
+      path: cutils.h
+      title: cutils.h
+    - icon: ':warning:'
+      path: debug.h
+      title: debug.h
+    - icon: ':warning:'
       path: disjoint-set.h
       title: disjoint-set.h
     - icon: ':warning:'
@@ -121,8 +130,8 @@ data:
       path: tree.h
       title: tree.h
     - icon: ':warning:'
-      path: util.h
-      title: util.h
+      path: vutils.h
+      title: vutils.h
   verificationCategories:
   - name: .
     pages:
