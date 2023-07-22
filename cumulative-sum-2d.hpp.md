@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: verify/abc311_e.cpp
-    title: verify/abc311_e.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -33,8 +30,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: cumulative-sum-2d.hpp
-  requiredBy:
-  - verify/abc311_e.cpp
+  requiredBy: []
   timestamp: '2023-07-23 00:14:59+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
