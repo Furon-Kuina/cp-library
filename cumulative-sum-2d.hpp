@@ -1,3 +1,4 @@
+#include <cassert>
 #include <vector>
 
 template <typename T>
