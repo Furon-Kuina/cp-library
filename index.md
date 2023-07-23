@@ -46,9 +46,6 @@ data:
       path: convolution.h
       title: convolution.h
     - icon: ':warning:'
-      path: cumulative-sum-2d.hpp
-      title: cumulative-sum-2d.hpp
-    - icon: ':warning:'
       path: cutils.h
       title: cutils.h
     - icon: ':warning:'
@@ -66,6 +63,9 @@ data:
     - icon: ':warning:'
       path: fps.h
       title: fps.h
+    - icon: ':warning:'
+      path: functional-graph.hpp
+      title: functional-graph.hpp
     - icon: ':warning:'
       path: gaussian-elimination.h
       title: gaussian-elimination.h
@@ -100,8 +100,11 @@ data:
       path: permutation.h
       title: permutation.h
     - icon: ':warning:'
-      path: prefix-sum.h
-      title: prefix-sum.h
+      path: prefix-sum-2d.hpp
+      title: prefix-sum-2d.hpp
+    - icon: ':warning:'
+      path: prefix-sum.hpp
+      title: prefix-sum.hpp
     - icon: ':warning:'
       path: quotient-range.h
       title: quotient-range.h
@@ -132,11 +135,6 @@ data:
     - icon: ':warning:'
       path: vutils.h
       title: vutils.h
-  - name: verify
-    pages:
-    - icon: ':warning:'
-      path: verify/abc311_e.cpp
-      title: verify/abc311_e.cpp
   verificationCategories:
   - name: .
     pages:
