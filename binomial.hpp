@@ -1,3 +1,6 @@
+#include <cassert>
+#include <vector>
+
 template <typename T>
 class Binomial {
  private:

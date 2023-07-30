@@ -1,8 +1,8 @@
-#include <compress.h>
-
 #include <cassert>
 #include <queue>
 #include <vector>
+
+#include "compress.hpp"
 
 template <typename T>
 struct FenwickTree {

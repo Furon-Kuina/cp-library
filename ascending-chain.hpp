@@ -2,8 +2,8 @@
 
 // split a vector into ascending chains
 // the first return value is the chains(in indices) and the second is the id of
-// the chain each element belongs to [1, 5, 1, 2, 8] -> ([[0, 1], [2, 3, 4]],
-// [0, 0, 1, 1, 1])
+// the chain each element belongs to
+// e.g. [1, 5, 1, 2, 8] -> ([[0, 1], [2, 3, 4]], [0, 0, 1, 1, 1])
 std::pair<std::vector<std::vector<int> >, std::vector<int> >
 SplitIntoAscendingChains(std::vector<long long> &v) {
   std::vector<std::vector<int> > res;

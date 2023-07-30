@@ -55,7 +55,7 @@ struct MultiSet : public std::multiset<T> {
 
   void PopFront() {
     assert(!(*this).empty());
-    erase((*this).begin());
+    (*this).erase((*this).begin());
   }
 
   void PopBack() {
