@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: h
+  _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph.h\"\n#include <algorithm>\n#include <limits>\n#include\
+  bundledCode: "#line 1 \"graph.hpp\"\n#include <algorithm>\n#include <limits>\n#include\
     \ <queue>\n#include <vector>\nnamespace graph {\n\nstruct Edge {\n  int to;\n\
     \  long long cost;\n\n  Edge(int to, long long cost) : to(to), cost(cost) {}\n\
     };\n\nusing Graph = std::vector<std::vector<int>>;\nusing WeightedGraph = std::vector<std::vector<Edge>>;\n\
@@ -152,15 +152,15 @@ data:
     \      res[to].emplace_back(i);\n    }\n  }\n  return res;\n}"
   dependsOn: []
   isVerificationFile: false
-  path: graph.h
+  path: graph.hpp
   requiredBy: []
-  timestamp: '2023-07-23 00:00:15+09:00'
+  timestamp: '2023-07-30 22:22:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: graph.h
+documentation_of: graph.hpp
 layout: document
 redirect_from:
-- /library/graph.h
-- /library/graph.h.html
-title: graph.h
+- /library/graph.hpp
+- /library/graph.hpp.html
+title: graph.hpp
 ---

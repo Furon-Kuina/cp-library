@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: h
+  _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"cutils.h\"\n#include <cassert>\n#include <cmath>\nconstexpr\
+  bundledCode: "#line 1 \"cutils.hpp\"\n#include <cassert>\n#include <cmath>\nconstexpr\
     \ long long kMax = std::numeric_limits<long long>::max();\n\ninline long long\
     \ CountDigit(long long n, const long long base = 10) {\n  assert(n > 0);\n  assert(base\
     \ > 1);\n  long long res = 0;\n  while (n) {\n    res++;\n    n /= base;\n  }\n\
@@ -83,15 +83,15 @@ data:
     \ else {\n      ng = mid;\n    }\n  }\n  return ok;\n}\n"
   dependsOn: []
   isVerificationFile: false
-  path: cutils.h
+  path: cutils.hpp
   requiredBy: []
-  timestamp: '2023-07-23 00:00:15+09:00'
+  timestamp: '2023-07-30 22:22:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: cutils.h
+documentation_of: cutils.hpp
 layout: document
 redirect_from:
-- /library/cutils.h
-- /library/cutils.h.html
-title: cutils.h
+- /library/cutils.hpp
+- /library/cutils.hpp.html
+title: cutils.hpp
 ---

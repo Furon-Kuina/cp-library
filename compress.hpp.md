@@ -3,16 +3,16 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: fenwick-tree.h
-    title: fenwick-tree.h
+    path: fenwick-tree.hpp
+    title: fenwick-tree.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: h
+  _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"compress.h\"\n#include <algorithm>\n#include <vector>\n\n\
-    template <typename T = long long>\nstruct Compress {\n  std::vector<T> vec_;\n\
+  bundledCode: "#line 1 \"compress.hpp\"\n#include <algorithm>\n#include <vector>\n\
+    \ntemplate <typename T = long long>\nstruct Compress {\n  std::vector<T> vec_;\n\
     \  std::vector<T> values_;\n  std::vector<long long> rank_;\n\n  explicit Compress(const\
     \ std::vector<T> &vec) : vec_(vec) {\n    int n = (int)vec_.size();\n    values_\
     \ = vec;\n    rank_.resize(n);\n    std::sort(values_.begin(), values_.end());\n\
@@ -39,16 +39,16 @@ data:
     \  }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: compress.h
+  path: compress.hpp
   requiredBy:
-  - fenwick-tree.h
-  timestamp: '2023-07-23 00:00:15+09:00'
+  - fenwick-tree.hpp
+  timestamp: '2023-07-30 22:22:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: compress.h
+documentation_of: compress.hpp
 layout: document
 redirect_from:
-- /library/compress.h
-- /library/compress.h.html
-title: compress.h
+- /library/compress.hpp
+- /library/compress.hpp.html
+title: compress.hpp
 ---

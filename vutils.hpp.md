@@ -4,12 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: h
+  _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"vutils.h\"\n#include <algorithm>\n#include <numeric>\n#include\
-    \ <vector>\n\ntemplate <typename T, typename F>\nbool Exists(const std::vector<T>\
+  bundledCode: "#line 1 \"vutils.hpp\"\n#include <algorithm>\n#include <numeric>\n\
+    #include <vector>\n\ntemplate <typename T, typename F>\nbool Exists(const std::vector<T>\
     \ &v, F &&f) {\n  return std::any_of(v.begin(), v.end(), f);\n}\n\ntemplate <typename\
     \ T, typename F>\nbool ForAll(const std::vector<T> &v, F &&f) {\n  return std::all_of(v.begin(),\
     \ v.end(), f);\n}\n\nstd::vector<long long> Iota(int len, long long from = 0,\
@@ -57,15 +57,15 @@ data:
     \ vec_.end(), x) - vec_.begin();\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: vutils.h
+  path: vutils.hpp
   requiredBy: []
-  timestamp: '2023-07-23 00:00:15+09:00'
+  timestamp: '2023-07-30 22:22:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: vutils.h
+documentation_of: vutils.hpp
 layout: document
 redirect_from:
-- /library/vutils.h
-- /library/vutils.h.html
-title: vutils.h
+- /library/vutils.hpp
+- /library/vutils.hpp.html
+title: vutils.hpp
 ---

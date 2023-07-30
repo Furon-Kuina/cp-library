@@ -4,26 +4,23 @@ data:
   - name: .
     pages:
     - icon: ':warning:'
-      path: arithmetic.h
-      title: arithmetic.h
+      path: arithmetic.hpp
+      title: arithmetic.hpp
     - icon: ':warning:'
-      path: ascending-chain.h
-      title: ascending-chain.h
+      path: ascending-chain.hpp
+      title: ascending-chain.hpp
     - icon: ':warning:'
       path: bellman-ford.h
       title: bellman-ford.h
     - icon: ':warning:'
-      path: bfs.h
-      title: bfs.h
-    - icon: ':warning:'
-      path: binary-search.h
-      title: binary-search.h
+      path: binary-search.hpp
+      title: binary-search.hpp
     - icon: ':warning:'
       path: binary-trie.h
       title: binary-trie.h
     - icon: ':warning:'
-      path: binomial.h
-      title: binomial.h
+      path: binomial.hpp
+      title: binomial.hpp
     - icon: ':warning:'
       path: bipartite.h
       title: bipartite.h
@@ -37,8 +34,8 @@ data:
       path: bsgs.h
       title: bsgs.h
     - icon: ':warning:'
-      path: compress.h
-      title: compress.h
+      path: compress.hpp
+      title: compress.hpp
     - icon: ':warning:'
       path: connected-components.h
       title: connected-components.h
@@ -46,26 +43,23 @@ data:
       path: convolution.h
       title: convolution.h
     - icon: ':warning:'
-      path: cutils.h
-      title: cutils.h
+      path: cutils.hpp
+      title: cutils.hpp
     - icon: ':warning:'
       path: debug.h
       title: debug.h
     - icon: ':warning:'
-      path: disjoint-set.h
-      title: disjoint-set.h
+      path: disjoint-set.hpp
+      title: disjoint-set.hpp
     - icon: ':warning:'
       path: divisor-transform.h
       title: divisor-transform.h
     - icon: ':warning:'
-      path: fenwick-tree.h
-      title: fenwick-tree.h
+      path: fenwick-tree.hpp
+      title: fenwick-tree.hpp
     - icon: ':warning:'
       path: fps.h
       title: fps.h
-    - icon: ':warning:'
-      path: functional-graph.hpp
-      title: functional-graph.hpp
     - icon: ':warning:'
       path: gaussian-elimination.h
       title: gaussian-elimination.h
@@ -73,8 +67,8 @@ data:
       path: geometry.h
       title: geometry.h
     - icon: ':warning:'
-      path: graph.h
-      title: graph.h
+      path: graph.hpp
+      title: graph.hpp
     - icon: ':warning:'
       path: grid.h
       title: grid.h
@@ -85,14 +79,14 @@ data:
       path: hld.h
       title: hld.h
     - icon: ':warning:'
-      path: interval-set.h
-      title: interval-set.h
+      path: interval-set.hpp
+      title: interval-set.hpp
     - icon: ':warning:'
       path: lis.h
       title: lis.h
     - icon: ':warning:'
-      path: matrix.h
-      title: matrix.h
+      path: matrix.hpp
+      title: matrix.hpp
     - icon: ':warning:'
       path: next-combination.h
       title: next-combination.h
@@ -115,11 +109,11 @@ data:
       path: rational.h
       title: rational.h
     - icon: ':warning:'
-      path: run-length.h
-      title: run-length.h
+      path: run-length.hpp
+      title: run-length.hpp
     - icon: ':warning:'
-      path: set.h
-      title: set.h
+      path: set.hpp
+      title: set.hpp
     - icon: ':warning:'
       path: slope-trick.h
       title: slope-trick.h
@@ -127,14 +121,11 @@ data:
       path: sparse-table.h
       title: sparse-table.h
     - icon: ':warning:'
-      path: template.cpp
-      title: template.cpp
-    - icon: ':warning:'
       path: tree.h
       title: tree.h
     - icon: ':warning:'
-      path: vutils.h
-      title: vutils.h
+      path: vutils.hpp
+      title: vutils.hpp
   verificationCategories:
   - name: .
     pages:

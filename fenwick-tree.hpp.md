@@ -2,27 +2,40 @@
 data:
   _extendedDependsOn:
   - icon: ':warning:'
-    path: compress.h
-    title: compress.h
+    path: compress.hpp
+    title: compress.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: h
+  _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"fenwick-tree.h\"\n#include <compress.h>\n\n#include <cassert>\n\
-    #include <queue>\n#include <vector>\n\ntemplate <typename T>\nstruct FenwickTree\
-    \ {\n  long long n_;\n  std::vector<T> v_;\n\n  explicit FenwickTree(long long\
-    \ n) : n_(n), v_(n, T(0)) {}\n\n  void Add(long long p, T x) {\n    assert(0 <=\
-    \ p && p < n_);\n    p++;\n    while (p <= n_) {\n      v_[p - 1] += x;\n    \
-    \  p += p & -p;\n    }\n  }\n\n  T Sum(long long r) {\n    T res = 0;\n    while\
-    \ (r > 0) {\n      res += v_[r - 1];\n      r -= r & -r;\n    }\n    return res;\n\
-    \  }\n\n  T Sum(long long begin, long long end) {\n    assert(0 <= begin && begin\
-    \ <= end && end <= n_);\n    return Sum(end) - Sum(begin);\n  }\n\n  T Get(long\
-    \ long i) {\n    assert(0 <= i && i < n_);\n    return Sum(i, i + 1);\n  }\n\n\
-    \  void Insert(long long p, T num = 1) { Add(p, num); }\n\n  void Erase(long long\
-    \ p, T num = 1) { Add(p, -num); }\n\n  bool Contains(long long p) { return Get(p)\
+  bundledCode: "#line 1 \"fenwick-tree.hpp\"\n#include <cassert>\n#include <queue>\n\
+    #include <vector>\n\n#line 1 \"compress.hpp\"\n#include <algorithm>\n#line 3 \"\
+    compress.hpp\"\n\ntemplate <typename T = long long>\nstruct Compress {\n  std::vector<T>\
+    \ vec_;\n  std::vector<T> values_;\n  std::vector<long long> rank_;\n\n  explicit\
+    \ Compress(const std::vector<T> &vec) : vec_(vec) {\n    int n = (int)vec_.size();\n\
+    \    values_ = vec;\n    rank_.resize(n);\n    std::sort(values_.begin(), values_.end());\n\
+    \    values_.erase(std::unique(values_.begin(), values_.end()), values_.end());\n\
+    \    for (int i = 0; i < n; ++i) {\n      rank_[i] = std::lower_bound(values_.begin(),\
+    \ values_.end(), vec[i]) -\n                 values_.begin();\n    }\n  }\n\n\
+    \  std::vector<T> GetValueList() { return values_; }\n\n  std::vector<long long>\
+    \ GetRankList() { return rank_; }\n\n  std::pair<std::vector<T>, std::vector<long\
+    \ long> > GetResult() {\n    return {values_, rank_};\n  }\n\n  int GetRank(T\
+    \ x) {\n    auto itr = std::lower_bound(values_.begin(), values_.end(), x);\n\
+    \    assert(*itr == x);\n    return itr - values_.begin();\n  }\n};\n#line 6 \"\
+    fenwick-tree.hpp\"\n\ntemplate <typename T>\nstruct FenwickTree {\n  long long\
+    \ n_;\n  std::vector<T> v_;\n\n  explicit FenwickTree(long long n) : n_(n), v_(n,\
+    \ T(0)) {}\n\n  void Add(long long p, T x) {\n    assert(0 <= p && p < n_);\n\
+    \    p++;\n    while (p <= n_) {\n      v_[p - 1] += x;\n      p += p & -p;\n\
+    \    }\n  }\n\n  T Sum(long long r) {\n    T res = 0;\n    while (r > 0) {\n \
+    \     res += v_[r - 1];\n      r -= r & -r;\n    }\n    return res;\n  }\n\n \
+    \ T Sum(long long begin, long long end) {\n    assert(0 <= begin && begin <= end\
+    \ && end <= n_);\n    return Sum(end) - Sum(begin);\n  }\n\n  T Get(long long\
+    \ i) {\n    assert(0 <= i && i < n_);\n    return Sum(i, i + 1);\n  }\n\n  void\
+    \ Insert(long long p, T num = 1) { Add(p, num); }\n\n  void Erase(long long p,\
+    \ T num = 1) { Add(p, -num); }\n\n  bool Contains(long long p) { return Get(p)\
     \ >= 1; }\n\n  int LowerBoundIndex(long long w) {\n    long long t = w;\n    //\
     \ a[0] + ... + a[i] >= w\u3068\u306A\u308B\u6700\u5C0F\u306Ei\u3092\u6C42\u3081\
     \u308B\n    // \u914D\u5217\u306E\u5404\u6210\u5206\u306F\u975E\u8CA0\u3067\u306A\
@@ -41,8 +54,8 @@ data:
     \  }\n  FenwickTree<long long> ft((long long)n);\n  long long res = 0;\n  while\
     \ (!heap.empty()) {\n    auto [r, pos] = heap.top();\n    heap.pop();\n    res\
     \ += ft.Sum(pos);\n    ft.Insert(pos);\n  }\n  return res;\n}\n"
-  code: "#include <compress.h>\n\n#include <cassert>\n#include <queue>\n#include <vector>\n\
-    \ntemplate <typename T>\nstruct FenwickTree {\n  long long n_;\n  std::vector<T>\
+  code: "#include <cassert>\n#include <queue>\n#include <vector>\n\n#include \"compress.hpp\"\
+    \n\ntemplate <typename T>\nstruct FenwickTree {\n  long long n_;\n  std::vector<T>\
     \ v_;\n\n  explicit FenwickTree(long long n) : n_(n), v_(n, T(0)) {}\n\n  void\
     \ Add(long long p, T x) {\n    assert(0 <= p && p < n_);\n    p++;\n    while\
     \ (p <= n_) {\n      v_[p - 1] += x;\n      p += p & -p;\n    }\n  }\n\n  T Sum(long\
@@ -72,17 +85,17 @@ data:
     \ [r, pos] = heap.top();\n    heap.pop();\n    res += ft.Sum(pos);\n    ft.Insert(pos);\n\
     \  }\n  return res;\n}"
   dependsOn:
-  - compress.h
+  - compress.hpp
   isVerificationFile: false
-  path: fenwick-tree.h
+  path: fenwick-tree.hpp
   requiredBy: []
-  timestamp: '2023-07-23 00:00:15+09:00'
+  timestamp: '2023-07-30 22:22:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: fenwick-tree.h
+documentation_of: fenwick-tree.hpp
 layout: document
 redirect_from:
-- /library/fenwick-tree.h
-- /library/fenwick-tree.h.html
-title: fenwick-tree.h
+- /library/fenwick-tree.hpp
+- /library/fenwick-tree.hpp.html
+title: fenwick-tree.hpp
 ---

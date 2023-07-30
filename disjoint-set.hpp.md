@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: h
+  _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"disjoint-set.h\"\n#include <algorithm>\n#include <vector>\n\
+  bundledCode: "#line 1 \"disjoint-set.hpp\"\n#include <algorithm>\n#include <vector>\n\
     \nclass DisjointSet {\n  std::vector<long long> parent_;  // \u5404\u5143\u306E\
     \u89AA\u3092\u8868\u3059\u914D\u5217\n  std::vector<long long> size_;  // \u7D20\
     \u96C6\u5408\u306E\u30B5\u30A4\u30BA\u3092\u8868\u3059\u914D\u5217(1 \u3067\u521D\
@@ -40,15 +40,15 @@ data:
     \ { return size_[Root(x)]; }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: disjoint-set.h
+  path: disjoint-set.hpp
   requiredBy: []
-  timestamp: '2023-07-23 00:00:15+09:00'
+  timestamp: '2023-07-30 22:22:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: disjoint-set.h
+documentation_of: disjoint-set.hpp
 layout: document
 redirect_from:
-- /library/disjoint-set.h
-- /library/disjoint-set.h.html
-title: disjoint-set.h
+- /library/disjoint-set.hpp
+- /library/disjoint-set.hpp.html
+title: disjoint-set.hpp
 ---

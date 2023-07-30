@@ -22,11 +22,10 @@ data:
     \ line -1: no such header\n"
   code: "#include \"atcoder/segtree\"\n\nlong long OpLis(long long a, long long b)\
     \ { return max(a, b); }\n\nlong long ELis() { return 0; }\n\nlong long LongestIncreasingSequence(const\
-    \ std::vector<long long> &v) {\n    int n = (int) v.size();\n    atcoder::segtree<long\
-    \ long, OpLis, ELis> seg(n + 1);\n    for (int i = 0; i < n; ++i) {\n        long\
-    \ long l = seg.prod(0, (int) v[i]);\n        if (seg.get((int) v[i]) < l + 1)\
-    \ {\n            seg.set((int) v[i], l + 1);\n        }\n    }\n    return seg.all_prod();\n\
-    }"
+    \ std::vector<long long> &v) {\n  int n = (int)v.size();\n  atcoder::segtree<long\
+    \ long, OpLis, ELis> seg(n + 1);\n  for (int i = 0; i < n; ++i) {\n    long long\
+    \ l = seg.prod(0, (int)v[i]);\n    if (seg.get((int)v[i]) < l + 1) {\n      seg.set((int)v[i],\
+    \ l + 1);\n    }\n  }\n  return seg.all_prod();\n}"
   dependsOn: []
   isVerificationFile: false
   path: lis.h

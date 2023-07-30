@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: h
+  _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"arithmetic.h\"\n#include <algorithm>\n#include <cassert>\n\
+  bundledCode: "#line 1 \"arithmetic.hpp\"\n#include <algorithm>\n#include <cassert>\n\
     #include <vector>\n\nclass Sieve {\n private:\n  int max_;\n  int size_;\n  std::vector<int>\
     \ lpf_;\n  std::vector<int> lpf_exp_;\n  std::vector<int> lpf_div_;\n\n public:\n\
     \  std::vector<int> prime_list;\n\n  Sieve(int max) : max_(max), size_(max + 1)\
@@ -54,15 +54,15 @@ data:
     \ res.end());\n  return res;\n}\n"
   dependsOn: []
   isVerificationFile: false
-  path: arithmetic.h
+  path: arithmetic.hpp
   requiredBy: []
-  timestamp: '2023-07-23 00:00:15+09:00'
+  timestamp: '2023-07-30 22:22:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: arithmetic.h
+documentation_of: arithmetic.hpp
 layout: document
 redirect_from:
-- /library/arithmetic.h
-- /library/arithmetic.h.html
-title: arithmetic.h
+- /library/arithmetic.hpp
+- /library/arithmetic.hpp.html
+title: arithmetic.hpp
 ---
