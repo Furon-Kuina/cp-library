@@ -1,20 +1,20 @@
-template <typename T = long long, int B = 32>
+template <typename T = long long, int B = 63>
 struct BinaryTrie {
  private:
-  struct node {
+  struct Node {
     int cnt;
-    node* ch[2];
-    node() : cnt(0), ch{nullptr, nullptr} {}
+    Node* ch[2];
+    Node() : cnt(0), ch{nullptr, nullptr} {}
   };
-  node* add(node* t, T val, int b = B - 1) {
-    if (!t) t = new node;
+  Node* add(Node* t, T val, int b = B - 1) {
+    if (!t) t = new Node;
     t->cnt += 1;
     if (b < 0) return t;
     bool f = (val >> T(b)) & T(1);
     t->ch[f] = add(t->ch[f], val, b - 1);
     return t;
   }
-  node* sub(node* t, T val, int b = B - 1) {
+  Node* sub(Node* t, T val, int b = B - 1) {
     assert(t);
     t->cnt -= 1;
     if (t->cnt == 0) return nullptr;
@@ -23,26 +23,26 @@ struct BinaryTrie {
     t->ch[f] = sub(t->ch[f], val, b - 1);
     return t;
   }
-  T get_min(node* t, T val, int b = B - 1) const {
+  T get_min(Node* t, T val, int b = B - 1) const {
     assert(t);
     if (b < 0) return 0;
     bool f = (val >> T(b)) & T(1);
     f ^= !t->ch[f];
     return get_min(t->ch[f], val, b - 1) | (T(f) << T(b));
   }
-  T get(node* t, int k, int b = B - 1) const {
+  T get(Node* t, int k, int b = B - 1) const {
     if (b < 0) return 0;
     int m = t->ch[0] ? t->ch[0]->cnt : 0;
     return k < m ? get(t->ch[0], k, b - 1)
                  : get(t->ch[1], k - m, b - 1) | (T(1) << T(b));
   }
-  int count_lower(node* t, T val, int b = B - 1) {
+  int count_lower(Node* t, T val, int b = B - 1) {
     if (!t || b < 0) return 0;
     bool f = (val >> T(b)) & T(1);
     return (f && t->ch[0] ? t->ch[0]->cnt : 0) +
            count_lower(t->ch[f], val, b - 1);
   }
-  node* root;
+  Node* root;
 
  public:
   BinaryTrie() : root(nullptr) {}
@@ -60,7 +60,7 @@ struct BinaryTrie {
   }
   int count(T val) const {
     if (!root) return 0;
-    node* t = root;
+    Node* t = root;
     for (int i = B - 1; i >= 0; i--) {
       t = t->ch[(val >> T(i)) & T(1)];
       if (!t) return 0;

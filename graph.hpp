@@ -2,8 +2,6 @@
 #include <limits>
 #include <queue>
 #include <vector>
-namespace graph {
-
 struct Edge {
   int to;
   long long cost;
@@ -13,10 +11,6 @@ struct Edge {
 
 using Graph = std::vector<std::vector<int>>;
 using WeightedGraph = std::vector<std::vector<Edge>>;
-
-}  // namespace graph
-
-using namespace graph;
 
 std::vector<long long> Distance(const Graph &g, long long s) {
   constexpr long long kInf = std::numeric_limits<long long>::max() / 8;

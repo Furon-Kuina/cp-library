@@ -1,3 +1,15 @@
+#include <algorithm>
+#include <vector>
+struct Edge {
+  int to;
+  long long cost;
+
+  Edge(int to, long long cost) : to(to), cost(cost) {}
+};
+
+using Graph = std::vector<std::vector<int>>;
+using WeightedGraph = std::vector<std::vector<Edge>>;
+
 std::vector<long long> Depth(const Graph &g, int root = 0) {
   int n = (int)g.size();
   std::vector<long long> res(n);
@@ -114,18 +126,19 @@ std::pair<std::vector<int>, long long> Diameter(const WeightedGraph &G) {
   return make_pair(path, len);
 }
 
-pair<long long, int> LCA_op(pair<long long, int> a, pair<long long, int> b) {
-  return min(a, b);
+std::pair<long long, int> LCA_op(std::pair<long long, int> a,
+                                 std::pair<long long, int> b) {
+  return std::min(a, b);
 }
-pair<long long, int> LCA_identity() { return make_pair(INF, INF); }
+std::pair<long long, int> LCA_identity() { return std::make_pair(INF, INF); }
 
 struct LCA {
  private:
   int n;
-  const tree &G;
-  vector<pair<long long, int> > EulerTour;
-  vector<long long> depth;
-  vector<int> first;
+  const Graph &G;
+  std::vector<std::pair<long long, int>> EulerTour;
+  std::vector<long long> depth;
+  std::vector<int> first;
   int cnt;
   atcoder::segtree<pair<long long, int>, LCA_op, LCA_identity> seg;
 
@@ -199,8 +212,8 @@ template <typename T, T (*op)(T, int, Edge), T (*merge)(T, T), T (*op2)(T, int),
           T (*unit)()>
 struct Rerooting {
   int n;
-  vector<vector<Edge> > G;
-  vector<vector<T> > dp;
+  std::vector<std::vector<Edge>> G;
+  std::vector<std::vector<T>> dp;
 
   T dfs1(int v, int p = -1) {
     T res = unit();
@@ -220,7 +233,7 @@ struct Rerooting {
         break;
       }
     }
-    vector<T> l(s + 1), r(s + 1);
+    std::vector<T> l(s + 1), r(s + 1);
     l[0] = unit();
     for (int i = 0; i < s; ++i) {
       l[i + 1] = merge(l[i], op(dp[v][i], G[v][i].to, G[v][i]));
@@ -244,11 +257,11 @@ struct Rerooting {
   }
 
  public:
-  explicit Rerooting(const wgraph &G_) : G(G_), n((int)G_.size()) {}
-  vector<T> solve() {
+  explicit Rerooting(const WeightedGraph &G_) : G(G_), n((int)G_.size()) {}
+  std::vector<T> solve() {
     dp.resize(n);
     build();
-    vector<T> ret(n);
+    std::vector<T> ret(n);
     for (int k = 0; k < n; ++k) {
       T res = unit();
       for (int i = 0; i < (int)G[k].size(); ++i) {

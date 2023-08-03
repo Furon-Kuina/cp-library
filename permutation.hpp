@@ -1,3 +1,6 @@
+#include <cassert>
+#include <vector>
+
 template <typename T>
 std::vector<int> InversePermutation(const std::vector<T> &v) {
   int n = (int)v.size();
