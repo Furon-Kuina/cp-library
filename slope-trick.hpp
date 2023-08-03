@@ -1,10 +1,14 @@
+#include <limits>
+#include <queue>
+#include <vector>
+
 template <typename T>
 struct SlopeTrick {
-  const T slope_INF = numeric_limits<T>::max() / 8;
+  const T slope_INF = std::numeric_limits<T>::max() / 8;
 
   T min_f;
-  priority_queue<T, vector<T>, less<> > L;
-  priority_queue<T, vector<T>, greater<> > R;
+  std::priority_queue<T, std::vector<T>, std::less<> > L;
+  std::priority_queue<T, std::vector<T>, std::greater<> > R;
   T add_l, add_r;
 
  private:
@@ -38,7 +42,7 @@ struct SlopeTrick {
     return val;
   }
 
-  size_t size() { return L.size() + R.size(); }
+  std::size_t size() { return L.size() + R.size(); }
 
  public:
   SlopeTrick() : min_f(0), add_l(0), add_r(0) {}
