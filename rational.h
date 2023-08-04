@@ -1,6 +1,9 @@
-struct rational {
+#include <numeric>
+
+struct Rational {
+  using i128 = __int128_t;
   long long u, l;
-  inline rational normalize() {
+  inline Rational Normalize() {
     if (l < 0) u = -u, l = -l;
     long long d = std::gcd(u, l);
     if (u == 0) {
@@ -11,13 +14,13 @@ struct rational {
     }
     return *this;
   }
-  rational(long long u, long long l) : u(u), l(l) { normalize() }
-  inline rational operator-() {
+  Rational(long long u, long long l) : u(u), l(l) { Normalize(); }
+  inline Rational operator-() {
     (*this).u *= -1;
     return (*this);
   }
-  inline const rational &operator=(long long a) {
-    (*this) = rational(a, 1);
+  inline const Rational &operator=(long long a) {
+    (*this) = Rational(a, 1);
     return (*this);
   }
 };

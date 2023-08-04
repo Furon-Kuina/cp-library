@@ -1,6 +1,5 @@
 #include <vector>
 
-#include "graph.hpp"
 std::tuple<bool, std::vector<std::vector<int> >, std::vector<int> >
 ConnectedComponents(const Graph &g) {
   int n = (int)g.size();
