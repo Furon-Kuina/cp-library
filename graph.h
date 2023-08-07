@@ -579,32 +579,35 @@ struct SparseTable {
   }
 };
 
+template <typename T>
 struct SparseTable {
-  std::vector<std::vector<long long>> st;
-  std::vector<int> lookup;
+  std::vector<std::vector<T>> st_;
+  std::vector<int> lookup_;
 
-  explicit SparseTable(const std::vector<long long> &v) {
+  SparseTable() = default;
+
+  explicit SparseTable(const std::vector<T> &v) {
     const int n = (int)v.size();
     const int b = 32 - __builtin_clz(n);
-    st.assign(b, std::vector<long long>(n));
+    st_.assign(b, std::vector<long long>(n));
     for (int i = 0; i < n; i++) {
-      st[0][i] = v[i];
+      st_[0][i] = v[i];
     }
     for (int i = 1; i < b; i++) {
       for (int j = 0; j + (1 << i) <= n; j++) {
-        st[i][j] = std::min(st[i - 1][j], st[i - 1][j + (1 << (i - 1))]);
+        st_[i][j] = std::min(st_[i - 1][j], st_[i - 1][j + (1 << (i - 1))]);
       }
     }
-    lookup.resize(n + 1);
+    lookup_.resize(n + 1);
     for (int i = 2; i < n + 1; i++) {
-      lookup[i] = lookup[i >> 1] + 1;
+      lookup_[i] = lookup_[i >> 1] + 1;
     }
   }
 
-  inline long long Min(long long l, long long r) {
+  inline T Min(long long l, long long r) {
     // a_l, ... a_{r-1}の最小値
-    int b = lookup[r - l];
-    return std::min(st[b][l], st[b][r - (1 << b)]);
+    int b = lookup_[r - l];
+    return std::min(st_[b][l], st_[b][r - (1 << b)]);
   }
 };
 
@@ -612,11 +615,11 @@ struct Lca {
  private:
   int n;
   const Graph &g;
+  int cnt;
   std::vector<std::pair<long long, int>> euler_tour;
   std::vector<long long> depth;
   std::vector<int> first;
-  int cnt;
-  SparseTable st;
+  SparseTable<std::pair<long long, int>> st;
 
   void Dfs(int v, int p, long long d) {
     depth[v] = d;
@@ -632,15 +635,15 @@ struct Lca {
   }
 
  public:
-  Lca(const Graph &g, int root = 0) : n((int)G.size()), g(g) {
+  explicit Lca(const Graph &g, int root = 0) : n((int)g.size()), g(g) {
     depth.resize(n);
     first.resize(n, -1);
     cnt = 0;
     Dfs(root, -1, 0);
-    st = SparseTable(euler_tour);
+    st = SparseTable<std::pair<long long, int>>(euler_tour);
   }
-  int query(int u, int v) {
-    if (first[u] > first[v]) swap(u, v);
-    return seg.prod(first[u], first[v] + 1).second;
+  int GetLca(int u, int v) {
+    if (first[u] > first[v]) std::swap(u, v);
+    return st.Min(first[u], first[v] + 1).second;
   }
 };
